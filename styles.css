@@ -1,0 +1,56 @@
+body {
+    background: gray;
+}
+
+.square {
+    position: relative;
+    width: 50%;
+    text-align: center;
+}
+
+.square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+} 
+
+.status-bar{
+    
+    background: blue;
+    margin:auto;
+    width: 50%;
+    text-align: center;
+    
+    
+}
+
+
+
+
+
+
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+     
+    background-color: white; 
+    border: 1px solid white;
+    padding: 0px;
+    margin: 0px;
+     
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+.grid-item {
+    background-color: gray;
+    border: 1px solid white;  
+    padding: 0px;
+    margin: 0px;
+    font-size: 30px;
+    text-align: center;
+}
+
