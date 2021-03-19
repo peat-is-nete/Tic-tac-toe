@@ -10,14 +10,6 @@ var refreshButton = document.querySelector("button");
 var turnText = document.querySelector(".turn");
 var subBar = document.getElementById(subBar);
 
-
-refreshButton.addEventListener("click", function() {
-    location.reload()
-})
-
-console.log(xMarker);
- 
-
 var turn = 0;
 var player = 0;
 
@@ -33,16 +25,25 @@ var p0 = [];
 var p1 = [];
 
 
+
+refreshButton.addEventListener("click", function() {
+    location.reload()
+})
+
+
 function colorChanger (event) {
      
     let whatIsClicked = event.target;
     player = turn%2;
+    
     
 
     if (player == 0){
         
         clickSound.play();
         let newX = xMarker.cloneNode(true);
+        whatIsClicked.style.boxSizing = "border-box";
+        whatIsClicked.style.border = "1vw solid #0000FF";
         newX.classList.remove("no-display");
         whatIsClicked.appendChild(newX);
         newX.parentNode.classList.remove("select");
@@ -55,6 +56,8 @@ function colorChanger (event) {
         
         clickSound.play();
         let newO = oMarker.cloneNode(true);
+        whatIsClicked.style.boxSizing = "border-box";
+        whatIsClicked.style.border = "1vw solid #0000FF";
         newO.classList.remove("no-display", "select");
         whatIsClicked.appendChild(newO);
         newO.parentNode.classList.remove("select");
@@ -67,24 +70,19 @@ function colorChanger (event) {
 
     turn++;
     
-     
-    console.log(player, "player");
-    console.log(turn, "turn");
-    console.log(event.target);
-
 
 }
 
-console.log(cell);
+ 
 
 
-
+// Adding event listener to each cell
 cell.forEach( function(e){
     e.addEventListener("click", colorChanger, {once:true});
 });
 
-//container.addEventListener("click", colorChanger);
 
-console.log(container);
+
+
 
 
