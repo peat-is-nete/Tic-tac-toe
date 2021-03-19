@@ -90,14 +90,8 @@ function playerPick (event) {
 
 
     turn++;
-    
-     
-}
 
-// Finds if there is a winner
-function isWinner () {
-
-    if (turn == 8){
+    if (turn == 9 && !(isWinner()) ){
         resetButton.style.backgroundColor = "white";
         title.innerHTML = "Cat's Game ^._.^";
         // console.log(t1);
@@ -105,7 +99,15 @@ function isWinner () {
          
 
     }
+
     
+     
+}
+
+// Finds if there is a winner
+function isWinner () {
+
+   
     let sortedp0 = p0MoveList.sort();
     let sortedp1 = p1MoveList.sort();
     let winner = "";
@@ -130,26 +132,27 @@ function isWinner () {
 
 
             if (winner == "x"){
-                bodyNode.style.backgroundColor = "green";
-                statusBar.style.backgroundColor = "green";
-                subBar.innerText = "Winner is x";
+                bodyNode.style.backgroundColor = "LightSeaGreen";
+                statusBar.style.backgroundColor = "LightSeaGreen";
+                subBar.innerText = "winner is x.";
                 
 
             //alert("winner is: " + winner);
             
             //reload();
             }else{
-                bodyNode.style.backgroundColor = "red";
-                statusBar.style.backgroundColor = "red";
-                subBar.innerText = "Winner is o";
+                bodyNode.style.backgroundColor = "LightSalmon";
+                statusBar.style.backgroundColor = "LightSalmon";
+                subBar.innerText = "winner is o.";
             }
 
+            return true;
         }
          
          
      }
 
-    
+     return false;
 }
 
 
