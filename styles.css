@@ -104,8 +104,7 @@ body {
 }
 
 footer {
-    padding-top: 5%;
-    padding-bottom: 10%;
+    padding-top: 15%;
     margin: auto;
     text-align: center;
 }
@@ -113,7 +112,7 @@ footer {
 footer p {
     color:gray;
     font-size: 3vw;
-    padding-top: 15%;
+    padding-top: 25%;
     margin: 0px;
 }
 
@@ -133,10 +132,24 @@ footer p {
     margin-left: 3px;
  }
  
- button {
-    background-color: #4CAF50;
+button {
+    background-color: white;
     text-decoration: none;
-    border: none;
-    color: black;
+    color: black; 
+}
 
- }
+button:hover {
+     background-color: gray;
+}
+
+
+
+a:link, a:visited {
+    color: gray;
+    text-decoration: none;
+     
+}
+  
+a:link:active, a:visited:active, a:hover {
+    color: white;
+}
