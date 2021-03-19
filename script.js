@@ -134,7 +134,7 @@ function isWinner () {
             if (winner == "x"){
                 bodyNode.style.backgroundColor = "LightSeaGreen";
                 statusBar.style.backgroundColor = "LightSeaGreen";
-                subBar.innerText = "winner is x.";
+                subBar.innerHTML = "&nbspwin: <span class='turn'> x </span> ";
                 
             
             //alert("winner is: " + winner);
@@ -143,7 +143,7 @@ function isWinner () {
             }else{
                 bodyNode.style.backgroundColor = "LightSalmon";
                 statusBar.style.backgroundColor = "LightSalmon";
-                subBar.innerText = "winner is o.";
+                subBar.innerHTML = "&nbspwin: <span class='turn'> o </span> ";
             }
 
             return true;
