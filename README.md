@@ -9,15 +9,15 @@ Description:
 
 User Stories:
 
-  As a user, I should be able to start a new tic tac toe game.
-  As a user, I should be able to click on one of the nine squares of the board with the first player being 'x'.
-  As a user, I should be able to alternate between clicking a square on the board with an 'x' and then with an 'o'.
-  As a user, I should receive a winning message when either 'x' or 'o' wins.
-  As a user, I should receive a 'cat's game' message if neither 'x' or 'o' wins.
-  As a user, I should be able to click on the same square on the board more than once.
-  As a user, I should receive an audio notification if a square is clicked or if the game has ended.
-  As a user, I should be able to play the game again without refreshing the page.
-  As a user, I shoulb be able to keep score of sets of games.
+  - As a user, I should be able to start a new tic tac toe game.
+  - As a user, I should be able to click on one of the nine squares of the board with the first player being 'x'.
+  - As a user, I should be able to alternate between clicking a square on the board with an 'x' and then with an 'o'.
+  - As a user, I should receive a winning message when either 'x' or 'o' wins.
+  - As a user, I should receive a 'cat's game' message if neither 'x' or 'o' wins.
+  - As a user, I should be able to click on the same square on the board more than once.
+  - As a user, I should receive an audio notification if a square is clicked or if the game has ended.
+  - As a user, I should be able to play the game again without refreshing the page.
+  - As a user, I shoulb be able to keep score of sets of games.
 
 
 
