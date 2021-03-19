@@ -127,7 +127,7 @@ function isWinner () {
 
 
             cell.forEach( function(e){
-                e.removeEventListener("click", playerPick, {once:true});
+                e.removeEventListener("click", playerPick);
             });
 
 
@@ -136,7 +136,7 @@ function isWinner () {
                 statusBar.style.backgroundColor = "LightSeaGreen";
                 subBar.innerText = "winner is x.";
                 
-
+            
             //alert("winner is: " + winner);
             
             //reload();
