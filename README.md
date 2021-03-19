@@ -29,7 +29,7 @@ Two arrays hold the list of moves for each player.
 Player 'x' has their own separate moves array, and Player 'o' has their own separate moves array. 
 Upon each turn, the moves of both Player 'o' and Player 'x' are checked against another "winning moves" array that has the winning combinations of 
 all 8 possible winning moves, for example ('1', '2', '3') would be all squares selected in the top row, and ('1', '5', '9') would result in a 
-diagonal win. After each click, the event listener should be removed to prevent future clicks (you can only click on a unique square once).
+diagonal win. After each click, the event listener should be removed to prevent future clicks (you can only click on a unique square once). This is done by passing a third optional argument ( {once:true} ) to the addEventListener method. This will only allow the event to fire once.
 
 
 
