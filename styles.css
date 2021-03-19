@@ -134,20 +134,25 @@ footer p {
  
 button {
     background-color: white;
+    border: medium solid black;
     text-decoration: none;
     color: black; 
+    outline: none;
+    font-family: monospace;
+    font-size: 5vw;
 }
 
 button:hover {
-     background-color: gray;
+     background-color: black;
+     color:white;
+     border: medium solid white;
 }
 
 
 
 a:link, a:visited {
     color: gray;
-    text-decoration: none;
-     
+    text-decoration: none;   
 }
   
 a:link:active, a:visited:active, a:hover {

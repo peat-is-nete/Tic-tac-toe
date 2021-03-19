@@ -24,10 +24,17 @@ var winMoves = [
 var p0MoveList = [];
 var p1MoveList = [];
 
+function reload() {
+    location.reload();
+    return false;
+}
 
 // Adding page reload function to reset button
 resetButton.addEventListener("click", function() {
-    location.reload()
+    clickSound.play();
+    setTimeout(reload, 100);
+     
+     
 })
 
 
