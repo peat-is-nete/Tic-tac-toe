@@ -8,22 +8,35 @@ var xMarker = document.querySelector('#x');
 var oMarker = document.querySelector('#o');
 var resetButton = document.querySelector("button");
 var turnText = document.querySelector(".turn");
-var subBar = document.getElementById(subBar);
+var subBar = document.getElementById("sub-bar");
+var title = document.getElementById("title");
+var t1 = document.getElementById("1");
+var bodyNode = document.querySelector("body");
+ 
 
 var turn = 0;
 var player = 0;
 
+// These are the win
 var winMoves = [
-        [1,2,3],
-        [4,5,6],
-        [7,8,9],
-        [1,5,9],
-        [3,5,7]
+        ["1","2","3"],
+        ["4","5","6"],
+        ["7","8","9"],
+        
+        ["1","4","7"],
+        ["2","5","8"],
+        ["3","6","9"],
+
+        ["1","5","9"],
+        ["3","5","7"]
     ];
 
+// List of all moves for both players.
 var p0MoveList = [];
 var p1MoveList = [];
 
+
+// For this function to work, you must return a 'false' to caller.
 function reload() {
     location.reload();
     return false;
@@ -33,12 +46,10 @@ function reload() {
 resetButton.addEventListener("click", function() {
     clickSound.play();
     setTimeout(reload, 100);
-     
-     
 })
 
 
-function colorChanger (event) {
+function playerPick (event) {
      
     let whatIsClicked = event.target;
     player = turn%2;
@@ -49,8 +60,8 @@ function colorChanger (event) {
         
         clickSound.play();
         let newX = xMarker.cloneNode(true);
-        whatIsClicked.style.boxSizing = "border-box";
-        whatIsClicked.style.border = "1vw solid gray";
+        // whatIsClicked.style.boxSizing = "border-box";
+        // whatIsClicked.style.border = "1vw solid gray";
         newX.classList.remove("no-display");
         whatIsClicked.appendChild(newX);
         newX.parentNode.classList.remove("select");
@@ -63,8 +74,8 @@ function colorChanger (event) {
         
         clickSound.play();
         let newO = oMarker.cloneNode(true);
-        whatIsClicked.style.boxSizing = "border-box";
-        whatIsClicked.style.border = "1vw solid gray";
+        // whatIsClicked.style.boxSizing = "border-box";
+        // whatIsClicked.style.border = "1vw solid gray";
         newO.classList.remove("no-display", "select");
         whatIsClicked.appendChild(newO);
         newO.parentNode.classList.remove("select");
@@ -74,18 +85,77 @@ function colorChanger (event) {
          
     }
 
+    isWinner();
+
+
 
     turn++;
     
-
+     
 }
 
- 
+// Finds if there is a winner
+function isWinner () {
+
+    if (turn == 8){
+        resetButton.style.backgroundColor = "white";
+        title.innerHTML = "Cat's Game ^._.^";
+        // console.log(t1);
+        // t1.style.border = "1vw solid red";
+         
+
+    }
+    
+    let sortedp0 = p0MoveList.sort();
+    let sortedp1 = p1MoveList.sort();
+    let winner = "";
+
+     for (let i=0; i<winMoves.length; i++){
+
+        if  ( winMoves[i].every( x => sortedp1.includes(x)) || winMoves[i].every( y => sortedp0.includes(y)) ) {
+            
+            console.log(sortedp1.length);
+            console.log(sortedp0.length);
+            
+            if( (sortedp1.length) > (sortedp0.length-1) ) {
+                winner = "o";
+            }else{
+                winner = "x";
+            }
+
+
+            cell.forEach( function(e){
+                e.removeEventListener("click", playerPick, {once:true});
+            });
+
+
+            if (winner == "x"){
+                bodyNode.style.backgroundColor = "green";
+                statusBar.style.backgroundColor = "green";
+                subBar.innerText = "Winner is x";
+                
+
+            //alert("winner is: " + winner);
+            
+            //reload();
+            }else{
+                bodyNode.style.backgroundColor = "red";
+                statusBar.style.backgroundColor = "red";
+                subBar.innerText = "Winner is o";
+            }
+
+        }
+         
+         
+     }
+
+    
+}
 
 
 // Adding event listener to each cell
 cell.forEach( function(e){
-    e.addEventListener("click", colorChanger, {once:true});
+    e.addEventListener("click", playerPick, {once:true});
 });
 
 
